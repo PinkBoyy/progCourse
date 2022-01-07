@@ -1,0 +1,7 @@
+LibName=Plotter
+
+echo Copying headers and lib...
+g++ -fPIC -shared *.cc -o lib$LibName.so
+cp *.hh $HOME/PinkBoy/include/.
+cp *.so $HOME/PinkBoy/lib/.
+echo Library Updated!

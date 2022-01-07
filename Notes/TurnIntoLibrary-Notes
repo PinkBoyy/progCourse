@@ -1,0 +1,37 @@
+Before this: 
+
+We made a Class called "RootFinder".. 
+
+Goal: turn my class into library and then compile it with any of my main.cpp file.. 
+
+Steps to do it:
+
+Step 1: turn class into library
+
+	 { g++ -fPIC -shared *.cc -o libRF.so } - turns class into library
+	
+	note: We can start with step 2, this was just to get to know how we do that.. 
+
+
+Step 2: make our lib and include folder into the home directory: "Home/PinkBoy/lib" and "Home/PinkBoy/include"
+
+
+Step 3: making executable script which will copy my lib and h files into the folders I made for them;
+		
+		a. creating file "makeLib" in which we write following codes:
+            LIBNAME=MyLibName
+			g++ -fPIC -shared *.cc -o libLIBNAME.so
+			echo copying the files..
+			cp *.hh $HOME/PinkBoy/include/.
+			cp *.so $HOME/PinkBoy/lib/.
+			echo Library Updated!
+			
+		b. turn this file into executable fileType:
+			chmod +x { fileName }
+			
+Step 4: in "Home/.bashrc" file we add the following lines:
+		alias myg++='g++ -I$HOME/PinkBoy/include -L$HOME/PinkBoy/lib'
+		export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/PinkBoy/lib
+	
+	
+Step 5: execute with : "myg++ main.cp -lLIBNAME"

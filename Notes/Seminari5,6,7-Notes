@@ -1,0 +1,56 @@
+Practicum 5, 6, 7 
+
+We made 3 Classes:
+
+Parent Class:                               Drawable
+Child Classes:                Histo                         Graph
+
+Drawable Class Functions and Members:       { why not pure virtual?? }
+    Private:
+                        vector fXdata       //X data of certain point
+                        vector fYdata       //Y data of certain point
+                        vector fEYdata     //error
+                        bool fDisplayError //whether we want to display an error or not
+                        string fName   //name of the object
+    Public:
+                        static int fDrCount  //count how many times we draw, so on last draw we pause the system
+                        //Construcors
+                        Drawable(const char* name)   //Constructor
+                        ~Drawable()   //Destructor
+                        //Functions
+                        virtual void Draw(const char* option ="")     //General Draw function {calls kst2 program}
+                        void ShowError(bool a)      //sets fDisplayError true or false
+
+Graph Class Functions and Members:
+    Private:
+
+    Public:
+                        //Constructors
+                        Graph(const char* name)
+                        Graph(const char* name, int np)      // np - number of points (if known in advance)
+                        //Functions
+                        void SetPoint(int n, double x, double y, double ey=0);    //n - index (sets points on index n)
+                        void AddPoint(double x, double y, double ey=0);    //Add new point
+
+Histo Class Functions and Members:
+    Private:
+                        int fnbins      //number of bins
+                        double fmin      //left margin of interval
+                        double fmax    //right margin of interval
+                        int fQuantity    //number of points - we are counting it since it will be needed in the future
+                        double GetSquareMean();    //not necessary, Formula = SumOf(fXdata^2 * fYdata) / fQuantity
+    Public:
+                        //Constructor
+                        Histo(const char* name, int nbins,  min, max)
+                        //Functions
+                        void Fill(double x)     //fills fYdata according to x {index Calculation is kinda mosatvini}
+                        double GetMean()    //Calculate mean, Formula: = SumOf(fXdata * fYdata) / fQuantity
+                        double GetRMS()     //Calculate RMS, Formula: = sqrt( SquareMean - Mean ^ 2)
+                        int GetIntegral()       //gxet fQuantity
+                        void Draw(const char* option = "")      //calls Parent Draw() but sends Option To it
+
+After All of that, We made this 3 classes into Plotter Library !! 
+i think i can revise every function by just looking at their definitions and Comments by me..
+    
+
+                    

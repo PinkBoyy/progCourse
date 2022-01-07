@@ -1,0 +1,7 @@
+LIBNAME=RF
+
+echo copying the files..
+g++ -fPIC -shared *.cc -o libLIBNAME.so
+cp *.hh $HOME/PinkBoy/include/.
+cp *.so $HOME/PinkBoy/lib/.
+echo Library Updated!
