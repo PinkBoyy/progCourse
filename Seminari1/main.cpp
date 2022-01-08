@@ -4,7 +4,7 @@
 using namespace std;
 
 //usual calculator
-float calculator(int argc, char** argv);
+float calculator(char** argv);
 
 //unsigned int Factorial Calculator
 unsigned long lFactorialCalculator(int);
@@ -35,7 +35,7 @@ void helper();
 int main(int argc, char** argv) {
   
   //checking input validity
-  if(argc == 4) cout << calculator(argc, argv) << endl;
+  if(argc == 4) cout << calculator(argv) << endl;
   
   //check which type we need { Unsigned Long or Double}
   else if(argc == 3 && atof(argv[1]) < 22 && *argv[2] == '!') cout << factorialCalculator<unsigned int>(atof(argv[1])) << endl;
@@ -47,7 +47,7 @@ int main(int argc, char** argv) {
 }
 
 
-float calculator(int argc, char** argv){
+float calculator(char** argv){
   
   float a = atof(argv[1]);
   float b = atof(argv[3]);
