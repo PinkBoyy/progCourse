@@ -1,7 +1,6 @@
 #include <iostream>
 #include "WaveReader.hh"
 #include <unistd.h>
-
 #include "Graph.hh"
 
 using namespace std;
@@ -35,9 +34,9 @@ void Run(const char* fileName, WaveReader wav1, Graph &gr, double vpp=2){
 int main(){
     
     WaveReader wav1;
-    Graph gr1("gr1");
+    // Graph gr1("gr1");
     Graph gr2("gr2");
-    Run("idle.wav", wav1, gr1, 5);
+    // Run("idle.wav", wav1, gr1, 5);
     Run("load.wav", wav1, gr2);
 
 }
