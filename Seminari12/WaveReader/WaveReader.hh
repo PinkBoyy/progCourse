@@ -21,8 +21,8 @@ public:
   virtual ~WaveReader();
   
   int        Open(const char* file, int maxsmp=-1);   //read that much of data
-  int GetData(int ch, double* data) const;
-  int GetTimeAxis(double* time) const;
+  int        GetData(int ch, double* data) const;
+  int        GetTimeAxis(double* time) const;
   short      GetNchannels() const { return NumOfChannels; }
   int        GetNsamples() const { return NumOfSamples; }
   int        GetNbits() const { return BitsPerSample; }

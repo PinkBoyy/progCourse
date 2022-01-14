@@ -89,7 +89,7 @@ double dFactorialCalculator(int a){
 
 void helper(){
   cout << "Some instructions for user..\n";
-  cout << "To use just {*, /, +, -}, pattern is like that: { a + b }\n";
+  cout << "To use just {x, /, +, -}, pattern is like that: { a + b }\n";
   cout << "To use factorial, pattern is: { a ! }\n";
   cout << "Where a and b are numbers..\n";
 }
