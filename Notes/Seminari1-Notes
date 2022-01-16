@@ -6,6 +6,3 @@ cd - change directory
 pwd - print working directory
 {COMMAND} --help - options for any command
 mkdir - make directory    { mkdir FILENAME } 
-cp - copy   { cp InitialFile FinalFile }
-cp -r ... ... - to copy folder
-mv - move
