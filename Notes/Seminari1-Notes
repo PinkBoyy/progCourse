@@ -5,4 +5,4 @@ rm -r   -  delete folder everything in it
 cd - change directory
 pwd - print working directory
 {COMMAND} --help - options for any command
-mkdir - make directory    { mkdir FILENAME } 
+mmkdir - make directory    { mkdir FILENAME } 
